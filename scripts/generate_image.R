@@ -1,11 +1,10 @@
 library(reticulate)
+library(ellmer)
 
-use_python("/usr/local/bin/python3")
-py_require("openai")
 source_python("scripts/generate_image.py")
 
 generate_image2 <- function(prompt, filepath) {
-  result <- generate_image(prompt, filepath)
+  generate_image(prompt = prompt, filename = filepath)
   return(filepath)
 }
 
@@ -25,6 +24,9 @@ register_generate_image_tool <- function(chat, ...) {
   )
   invisible(chat)
 }
-# chat <- chat_openai()
-# register_generate_image_tool(chat)
-# chat$chat("Give me a golden dog with bad hair")
+
+if (FALSE) {
+  chat <- chat_openai()
+  register_generate_image_tool(chat)
+  chat$chat("Give me a golden dog with bad hair")
+}

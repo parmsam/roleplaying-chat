@@ -23,6 +23,12 @@ system_prompt <- ellmer::interpolate_file(
 addResourcePath("images", "images")
 
 ui <- bslib::page_sidebar(
+  tags$style(HTML("
+    img {
+      width: 300px !important;
+      height: auto;
+    }
+  ")),
   tags$div(
     style = "display: flex; align-items: center; justify-content: space-between; width: 100%; position: relative; z-index: 1000; margin-bottom: 0.25rem;",
     tags$h4("Roleplaying Chat", style = "margin: 0;"),
