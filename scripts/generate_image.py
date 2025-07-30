@@ -1,7 +1,7 @@
 from openai import OpenAI
 import base64
 
-def generate_image(prompt, filename="temp.png", model="dall-e-2"):
+def generate_image(prompt, filename="images/temp.png", model="dall-e-2"):
     client = OpenAI()
     
     result = client.images.generate(
